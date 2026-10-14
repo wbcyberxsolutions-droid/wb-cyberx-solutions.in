@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="WB.CYBERX SOLUTIONS provides West Bengal job updates, online form guidance, admit cards, exam results, scholarships and government scheme information.">
+  <meta name="theme-color" content="#0b2b5b">
+  <title>WB.CYBERX SOLUTIONS | Jobs, Online Forms & Government Schemes</title>
+  <style>
+    :root {
+      --navy: #082858;
+      --blue: #0866dc;
+      --blue-dark: #074da8;
+      --green: #16864a;
+      --ink: #182944;
+      --muted: #65758d;
+      --line: #e1e9f4;
+      --bg: #f3f7fc;
+      --white: #fff;
+      --shadow: 0 8px 24px rgba(20, 54, 100, .07);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; font-family: Inter, "Segoe UI", Arial, sans-serif; color: var(--ink); background: var(--bg); line-height: 1.55; }
+    a { color: inherit; }
+    .topbar { background: var(--navy); color: #eaf2ff; padding: 8px 4.5%; display: flex; justify-content: space-between; gap: 12px; font-size: 12px; }
+    .topbar a { text-decoration: none; margin-left: 14px; }
+    .brandbar { background: white; padding: 17px 4.5%; display: flex; align-items: center; justify-content: space-between; gap: 24px; border-bottom: 1px solid var(--line); }
+    .brand { display: flex; align-items: center; gap: 13px; min-width: 260px; }
+    .logo { width: 52px; height: 52px; border-radius: 15px; background: linear-gradient(140deg, var(--blue), var(--navy)); display: grid; place-items: center; color: white; font-weight: 900; font-size: 16px; letter-spacing: -1px; box-shadow: 0 5px 14px #0866dc30; }
+    .brand h1 { font-size: clamp(19px, 2.2vw, 28px); margin: 0; line-height: 1.2; letter-spacing: -.6px; color: var(--navy); }
+    .brand h1 span { color: var(--blue); }
+    .brand p { margin: 5px 0 0; color: var(--muted); font-size: 12px; }
+    nav { display: flex; align-items: center; justify-content: flex-end; gap: 4px; flex-wrap: wrap; }
+    nav a { text-decoration: none; padding: 10px 12px; border-radius: 9px; font-size: 13px; font-weight: 700; color: #263b59; }
+    nav a:hover, nav a.active { background: var(--blue); color: white; }
+    .hero { background: linear-gradient(110deg, #e7f4ff 0%, #d5eaff 52%, #f5fbff 100%); padding: 36px 4.5% 30px; overflow: hidden; position: relative; }
+    .hero:after { content: "WB"; position: absolute; right: 8%; top: -54px; font-size: 240px; font-weight: 900; color: #0a65cf0b; pointer-events: none; }
+    .hero-inner { max-width: 1240px; margin: auto; display: grid; grid-template-columns: 1.2fr .8fr; gap: 32px; align-items: center; position: relative; z-index: 1; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 7px; color: var(--blue-dark); font-size: 12px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; background: #ffffffb8; padding: 7px 11px; border-radius: 999px; }
+    .hero h2 { font-size: clamp(29px, 4vw, 48px); line-height: 1.12; letter-spacing: -1.4px; margin: 14px 0; color: var(--navy); }
+    .hero h2 span { color: var(--blue); }
+    .hero p { max-width: 620px; color: #425674; margin: 0 0 20px; font-size: 16px; }
+    .search { display: flex; gap: 9px; max-width: 670px; background: white; border: 1px solid #cbdcf2; border-radius: 12px; padding: 6px; box-shadow: var(--shadow); }
+    .search input { flex: 1; min-width: 0; border: 0; outline: 0; padding: 11px 12px; font-size: 14px; background: transparent; color: var(--ink); }
+    .btn { border: 0; border-radius: 9px; display: inline-flex; align-items: center; justify-content: center; gap: 7px; padding: 11px 16px; background: var(--blue); color: white; text-decoration: none; font-weight: 800; font-size: 13px; cursor: pointer; transition: .2s; }
+    .btn:hover { background: var(--blue-dark); transform: translateY(-1px); }
+    .btn.green { background: var(--green); }
+    .btn.light { color: var(--blue-dark); background: #eaf3ff; }
+    .hero-panel { background: #ffffffc9; border: 1px solid #ffffff; border-radius: 18px; padding: 22px; box-shadow: var(--shadow); backdrop-filter: blur(8px); }
+    .hero-panel h3 { margin: 0 0 13px; color: var(--navy); font-size: 17px; }
+    .hero-point { display: flex; gap: 11px; align-items: center; padding: 10px 0; border-bottom: 1px solid #e7eef7; font-size: 13px; font-weight: 700; }
+    .hero-point:last-child { border-bottom: 0; }
+    .check { width: 29px; height: 29px; display: grid; place-items: center; border-radius: 9px; color: var(--green); background: #e3f6eb; flex-shrink: 0; }
+    .quicklinks { max-width: 1240px; margin: -1px auto 0; padding: 0 4.5%; display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; position: relative; z-index: 2; }
+    .quick { background: white; border: 1px solid var(--line); border-radius: 13px; padding: 17px 10px; text-align: center; text-decoration: none; box-shadow: var(--shadow); font-size: 12px; font-weight: 800; }
+    .quick .ico { margin: 0 auto 9px; width: 38px; height: 38px; border-radius: 12px; display: grid; place-items: center; background: #e8f2ff; color: var(--blue); font-size: 19px; }
+    .quick:nth-child(2) .ico { color: var(--green); background: #e4f7eb; }
+    .quick:nth-child(3) .ico { color: #7c3aed; background: #f1eaff; }
+    .quick:nth-child(4) .ico { color: #d9485f; background: #ffedf0; }
+    .quick:nth-child(5) .ico { color: #087e8b; background: #e2f8fa; }
+    .quick:nth-child(6) .ico { color: #c47708; background: #fff3d9; }
+    .container { max-width: 1240px; margin: 28px auto; padding: 0 4.5%; }
+    .section-head { display: flex; align-items: end; justify-content: space-between; gap: 12px; margin-bottom: 15px; }
+    .section-head h2 { margin: 0; color: var(--navy); font-size: 23px; letter-spacing: -.4px; }
+    .section-head p { margin: 4px 0 0; color: var(--muted); font-size: 13px; }
+    .text-link { color: var(--blue); text-decoration: none; font-size: 13px; font-weight: 800; white-space: nowrap; }
+    .main-grid { display: grid; grid-template-columns: 245px minmax(0, 1fr) 285px; gap: 17px; align-items: start; }
+    .panel { background: white; border: 1px solid var(--line); border-radius: 13px; box-shadow: var(--shadow); overflow: hidden; }
+    .panel-title { padding: 13px 16px; color: white; background: var(--blue-dark); font-weight: 800; font-size: 15px; }
+    .panel-title.green { background: var(--green); }
+    .category-list { padding: 8px; }
+    .category-list a { display: flex; justify-content: space-between; gap: 8px; align-items: center; background: #f2f7fe; border-radius: 8px; padding: 10px 11px; margin: 4px 0; text-decoration: none; color: #173b70; font-size: 13px; font-weight: 700; }
+    .category-list a:hover { background: #e1eeff; }
+    .category-list span { color: var(--blue); font-size: 17px; }
+    .job-list { padding: 0 16px; }
+    .job { padding: 16px 0; border-bottom: 1px solid #edf1f7; display: flex; align-items: center; gap: 12px; }
+    .job:last-child { border-bottom: 0; }
+    .job-logo { width: 43px; height: 43px; border-radius: 13px; background: #e8f2ff; display: grid; place-items: center; color: var(--blue-dark); font-size: 20px; flex-shrink: 0; }
+    .job-info { min-width: 0; flex: 1; }
+    .job-info h3 { margin: 0 0 5px; font-size: 14px; line-height: 1.35; color: #16345f; }
+    .meta { display: flex; flex-wrap: wrap; gap: 6px 12px; color: var(--muted); font-size: 11px; }
+    .tag { display: inline-block; background: #e6f1ff; color: #0754ae; border-radius: 5px; padding: 3px 7px; font-size: 10px; font-weight: 800; margin-bottom: 5px; }
+    .job .btn { white-space: nowrap; padding: 9px 12px; font-size: 11px; }
+    .scheme-list { padding: 4px 15px; }
+    .scheme { display: flex; align-items: center; gap: 10px; padding: 12px 0; border-bottom: 1px solid #edf1f7; text-decoration: none; font-size: 12px; font-weight: 700; }
+    .scheme:last-child { border-bottom: 0; }
+    .scheme-icon { width: 30px; height: 30px; display: grid; place-items: center; background: #e7f7ed; color: var(--green); border-radius: 50%; font-size: 15px; }
+    .scheme small { display: block; color: var(--muted); font-weight: 500; }
+    .notice { margin-top: 15px; background: #fff8e5; border: 1px solid #f7e4a8; padding: 16px; border-radius: 13px; }
+    .notice h3 { margin: 0 0 7px; color: #78500a; font-size: 15px; }
+    .notice p { margin: 0; color: #715d36; font-size: 12px; }
+    .stats { background: white; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 22px 4.5%; display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; }
+    .stat { display: flex; justify-content: center; align-items: center; gap: 11px; }
+    .stat-icon { font-size: 24px; color: var(--blue); }
+    .stat strong { display: block; font-size: 22px; color: var(--navy); line-height: 1.2; }
+    .stat span { font-size: 11px; color: var(--muted); }
+    .about { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .about-card { background: white; border: 1px solid var(--line); border-radius: 13px; padding: 22px; box-shadow: var(--shadow); }
+    .about-card h3 { margin: 0 0 8px; color: var(--navy); }
+    .about-card p { margin: 0; font-size: 13px; color: var(--muted); }
+    footer { margin-top: 34px; background: #061e43; color: #d7e4f7; padding: 24px 4.5% 15px; }
+    .footer-main { max-width: 1240px; margin: auto; display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+    footer h3 { margin: 0 0 6px; color: white; }
+    footer p { margin: 4px 0; font-size: 12px; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 14px; align-items: start; }
+    .footer-links a { color: #d7e4f7; font-size: 12px; text-decoration: none; }
+    .copyright { max-width: 1240px; margin: 18px auto 0; border-top: 1px solid #ffffff24; padding-top: 12px; display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; font-size: 11px; color: #b5c8e2; }
+    .empty { padding: 24px 8px; text-align: center; color: var(--muted); font-size: 13px; }
+    @media (max-width: 1050px) {
+      .brandbar { align-items: flex-start; flex-direction: column; gap: 14px; }
+      nav { justify-content: flex-start; }
+      .main-grid { grid-template-columns: 220px minmax(0, 1fr); }
+      .right-column { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+      .notice { margin-top: 0; }
+      .quicklinks { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 650px) {
+      .topbar { padding: 8px 4%; }
+      .topbar .top-links { display: none; }
+      .brandbar { padding: 14px 4%; }
+      .brand { min-width: 0; }
+      .logo { width: 44px; height: 44px; border-radius: 12px; }
+      nav { gap: 3px; }
+      nav a { padding: 8px 9px; font-size: 12px; }
+      .hero { padding: 28px 4% 24px; }
+      .hero-inner { grid-template-columns: 1fr; gap: 20px; }
+      .hero h2 { letter-spacing: -.7px; }
+      .hero-panel { padding: 15px; }
+      .quicklinks { padding: 0 4%; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+      .quick { padding: 13px 7px; }
+      .container { padding: 0 4%; margin: 24px auto; }
+      .main-grid { grid-template-columns: 1fr; }
+      .right-column { grid-column: auto; display: flex; flex-direction: column; }
+      .job { flex-wrap: wrap; }
+      .job .btn { margin-left: 55px; }
+      .stats { grid-template-columns: repeat(2, 1fr); padding: 18px 4%; }
+      .stat { justify-content: flex-start; }
+      .stat strong { font-size: 19px; }
+      .about { grid-template-columns: 1fr; }
+      .section-head h2 { font-size: 20px; }
+      .search { flex-direction: column; }
+      .search .btn { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div>📅 <span id="today">Your West Bengal Digital Service Guide</span></div>
+    <div class="top-links"><a href="#about">About Us</a><a href="#contact">Contact</a><a href="#notice">Disclaimer</a></div>
+  </div>
+
+  <header class="brandbar">
+    <div class="brand">
+      <div class="logo" aria-hidden="true">WB</div>
+      <div>
+        <h1>WB.<span>CYBERX</span> SOLUTIONS</h1>
+        <p>Jobs&nbsp; | &nbsp;Online Forms&nbsp; | &nbsp;Government Schemes&nbsp; | &nbsp;Digital Services</p>
+      </div>
+    </div>
+    <nav aria-label="Main navigation">
+      <a class="active" href="#home">⌂ Home</a>
+      <a href="#jobs">▣ Job Updates</a>
+      <a href="#forms">▤ Online Forms</a>
+      <a href="#schemes">♡ Government Schemes</a>
+      <a href="#results">★ Results</a>
+      <a href="#about">About Us</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-inner">
+        <div>
+          <span class="eyebrow">✦ Your Digital Service Partner</span>
+          <h2>Find Your Dream Job &amp;<br><span>Explore Government Schemes</span></h2>
+          <p>West Bengal job updates, online form guidance, recruitment notifications, admit cards, exam results, scholarships and government scheme information — all in one place.</p>
+          <form class="search" id="searchForm" role="search">
+            <input id="searchInput" type="search" placeholder="Search jobs, schemes, forms or departments..." aria-label="Search website updates">
+            <button class="btn" type="submit">⌕ Search</button>
+          </form>
+        </div>
+        <div class="hero-panel">
+          <h3>Explore Useful Information</h3>
+          <div class="hero-point"><span class="check">✓</span><span>Recruitment updates and application dates</span></div>
+          <div class="hero-point"><span class="check">✓</span><span>Official online application links</span></div>
+          <div class="hero-point"><span class="check">✓</span><span>Government schemes and eligibility guides</span></div>
+          <div class="hero-point"><span class="check">✓</span><span>Admit cards, results and scholarships</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="quicklinks" aria-label="Quick links">
+      <a class="quick" href="#jobs"><div class="ico">▣</div>Latest Job Updates</a>
+      <a class="quick" href="#forms"><div class="ico">▤</div>Online Form Fill-up</a>
+      <a class="quick" href="#admit"><div class="ico">▣</div>Admit Cards</a>
+      <a class="quick" href="#results"><div class="ico">★</div>Exam Results</a>
+      <a class="quick" href="#schemes"><div class="ico">♡</div>Government Schemes</a>
+      <a class="quick" href="#notice"><div class="ico">ⓘ</div>Important Notice</a>
+    </section>
+
+    <section class="container" id="jobs">
+      <div class="section-head">
+        <div><h2>Latest Job Updates</h2><p>Recruitment information and official application links</p></div>
+        <a class="text-link" href="#jobs">Explore updates →</a>
+      </div>
+      <div class="main-grid">
+        <aside class="panel">
+          <div class="panel-title">Popular Categories</div>
+          <div class="category-list">
+            <a href="#jobs" data-filter="government">Government Jobs <span>›</span></a>
+            <a href="#jobs" data-filter="private">Private Jobs <span>›</span></a>
+            <a href="#forms" data-filter="form">Online Form Fill-up <span>›</span></a>
+            <a href="#admit" data-filter="admit">Admit Cards <span>›</span></a>
+            <a href="#results" data-filter="result">Exam Results <span>›</span></a>
+            <a href="#schemes" data-filter="scheme">Government Schemes <span>›</span></a>
+            <a href="#scholarships" data-filter="scholarship">Scholarships <span>›</span></a>
+            <a href="#forms" data-filter="certificate">Certificate Services <span>›</span></a>
+          </div>
+        </aside>
+
+        <section class="panel" aria-label="Job listing">
+          <div class="panel-title">Featured Information</div>
+          <div class="job-list" id="jobList">
+            <article class="job" data-keywords="government job recruitment wbpsc public service commission official notification">
+              <div class="job-logo">🏛</div>
+              <div class="job-info">
+                <span class="tag">GOVERNMENT JOB</span>
+                <h3>West Bengal Public Service Commission</h3>
+                <div class="meta"><span>Recruitment notices</span><span>Check official dates</span></div>
+              </div>
+              <a class="btn" href="https://psc.wb.gov.in/" target="_blank" rel="noopener noreferrer">Official Site ↗</a>
+            </article>
+            <article class="job" data-keywords="government job police recruitment west bengal police">
+              <div class="job-logo">🛡</div>
+              <div class="job-info">
+                <span class="tag">RECRUITMENT</span>
+                <h3>West Bengal Police Recruitment</h3>
+                <div class="meta"><span>Vacancies and notices</span><span>Verify eligibility</span></div>
+              </div>
+              <a class="btn" href="https://prb.wb.gov.in/" target="_blank" rel="noopener noreferrer">Official Site ↗</a>
+            </article>
+            <article class="job" data-keywords="online form admission school college education">
+              <div class="job-logo">🎓</div>
+              <div class="job-info">
+                <span class="tag">ONLINE FORMS</span>
+                <h3>Admissions &amp; Online Applications</h3>
+                <div class="meta"><span>Application guidance</span><span>Check deadlines</span></div>
+              </div>
+              <a class="btn" href="https://banglaruchchashiksha.wb.gov.in/" target="_blank" rel="noopener noreferrer">Official Site ↗</a>
+            </article>
+            <article class="job" data-keywords="admit card result exam recruitment school service commission">
+              <div class="job-logo">📄</div>
+              <div class="job-info">
+                <span class="tag">EXAM UPDATES</span>
+                <h3>Admit Cards &amp; Examination Results</h3>
+                <div class="meta"><span>Official exam portals</span><span>Check latest notice</span></div>
+              </div>
+              <a class="btn" href="https://www.wb.gov.in/" target="_blank" rel="noopener noreferrer">Find Portal ↗</a>
+            </article>
+            <div class="empty" id="noResults" hidden>No matching items found. Try another search term.</div>
+          </div>
+        </section>
+
+        <aside class="right-column">
+          <section class="panel" id="schemes">
+            <div class="panel-title green">Government Schemes</div>
+            <div class="scheme-list">
+              <a class="scheme" href="https://wb.gov.in/" target="_blank" rel="noopener noreferrer" data-keywords="kanyashree scholarship girls"><span class="scheme-icon">👩</span><span>Kanyashree Prakalpa<small>Eligibility and official updates</small></span></a>
+              <a class="scheme" href="https://wb.gov.in/" target="_blank" rel="noopener noreferrer" data-keywords="sabuj sathi bicycle students"><span class="scheme-icon">🚲</span><span>Sabuj Sathi<small>Student scheme information</small></span></a>
+              <a class="scheme" href="https://swasthyasathi.gov.in/" target="_blank" rel="noopener noreferrer" data-keywords="swasthya sathi health"><span class="scheme-icon">✚</span><span>Swasthya Sathi<small>Official scheme website</small></span></a>
+              <a class="scheme" href="https://wb.gov.in/" target="_blank" rel="noopener noreferrer" data-keywords="housing bangla awas"><span class="scheme-icon">⌂</span><span>Housing Schemes<small>Check current government notices</small></span></a>
+              <a class="scheme" href="https://wb.gov.in/" target="_blank" rel="noopener noreferrer" data-keywords="rupashree marriage assistance"><span class="scheme-icon">♡</span><span>Rupashree Prakalpa<small>Eligibility and application guidance</small></span></a>
+            </div>
+          </section>
+          <section class="notice" id="notice">
+            <h3>📢 Important Notice</h3>
+            <p>Application dates, eligibility rules and fees may change. Always verify information on the relevant official website before applying or making a payment.</p>
+            <p style="margin-top:9px"><a class="text-link" href="https://wb.gov.in/" target="_blank" rel="noopener noreferrer">West Bengal Government Portal ↗</a></p>
+          </section>
+        </aside>
+      </div>
+    </section>
+
+    <section class="stats" aria-label="Website highlights">
+      <div class="stat"><div class="stat-icon">▣</div><div><strong>Job Updates</strong><span>Recruitment information</span></div></div>
+      <div class="stat"><div class="stat-icon">▤</div><div><strong>Online Forms</strong><span>Application guidance</span></div></div>
+      <div class="stat"><div class="stat-icon">♡</div><div><strong>Scheme Guides</strong><span>Benefits and eligibility</span></div></div>
+      <div class="stat"><div class="stat-icon">✓</div><div><strong>Useful Links</strong><span>Official sources</span></div></div>
+    </section>
+
+    <section class="container" id="forms">
+      <div class="about">
+        <div class="about-card" id="admit">
+          <h3>📝 Online Form Fill-up</h3>
+          <p>Use this section for application instructions, eligibility checklists, required documents and verified links to official application portals. Replace this sample text with your own updated posts.</p>
+        </div>
+        <div class="about-card" id="results">
+          <h3>🎓 Admit Cards, Results &amp; Scholarships</h3>
+          <p>Publish exam notices, admit-card release updates, result links and scholarship information here. Always link to the correct official authority.</p>
+        </div>
+        <div class="about-card" id="scholarships">
+          <h3>🎒 Scholarships</h3>
+          <p>Share scholarship eligibility, application windows, document requirements and official application links for students.</p>
+        </div>
+        <div class="about-card" id="about">
+          <h3>ℹ About WB.CYBERX SOLUTIONS</h3>
+          <p>WB.CYBERX SOLUTIONS is an independent information and digital service assistance platform intended to help visitors find public notices and official online resources more easily.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact">
+    <div class="footer-main">
+      <div>
+        <h3>WB.CYBERX SOLUTIONS</h3>
+        <p>Jobs • Online Forms • Government Schemes • Digital Services</p>
+        <p>Contact: Add your business email or phone number here.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#about">About Us</a>
+        <a href="#notice">Disclaimer</a>
+        <a href="#privacy">Privacy Policy</a>
+        <a href="#terms">Terms &amp; Conditions</a>
+      </div>
+    </div>
+    <div class="copyright">
+      <span>© <span id="year"></span> WB.CYBERX SOLUTIONS. All rights reserved.</span>
+      <span>This is an independent information platform and is not an official government website.</span>
+    </div>
+    <div id="privacy" hidden></div><div id="terms" hidden></div>
+  </footer>
+
+  <script>
+    // Local search filters the sample listings already displayed on this page.
+    const searchForm = document.getElementById('searchForm');
+    const searchInput = document.getElementById('searchInput');
+    const jobCards = Array.from(document.querySelectorAll('#jobList .job'));
+    const schemeCards = Array.from(document.querySelectorAll('.scheme'));
+    const noResults = document.getElementById('noResults');
+
+    function filterContent(query) {
+      const q = query.trim().toLowerCase();
+      let visible = 0;
+      jobCards.forEach(card => {
+        const match = !q || (card.innerText + ' ' + (card.dataset.keywords || '')).toLowerCase().includes(q);
+        card.hidden = !match;
+        if (match) visible++;
+      });
+      schemeCards.forEach(card => {
+        const match = !q || (card.innerText + ' ' + (card.dataset.keywords || '')).toLowerCase().includes(q);
+        card.hidden = !match;
+        if (match && q) visible++;
+      });
+      noResults.hidden = visible > 0 || !q;
+    }
+
+    searchForm.addEventListener('submit', event => {
+      event.preventDefault();
+      filterContent(searchInput.value);
+      document.getElementById('jobs').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    document.querySelectorAll('[data-filter]').forEach(link => {
+      link.addEventListener('click', () => {
+        const filter = link.dataset.filter;
+        const terms = {
+          government: 'government', private: 'private', form: 'online form',
+          admit: 'admit', result: 'result', scheme: 'scheme',
+          scholarship: 'scholarship', certificate: 'certificate'
+        };
+        searchInput.value = terms[filter] || '';
+        filterContent(searchInput.value);
+      });
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('today').textContent = new Date().toLocaleDateString('en-IN', {
+      weekday: 'long', day: 'numeric', month: 'long', year: 'numeric'
+    });
+  </script>
+</body>
+</html>
